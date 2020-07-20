@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": [
+      "es6"
+    ],
+    "rootDir": "./src",
+    "outDir": "dist",
+    "resolveJsonModule": true,
+    "strict": true,
+    "types": [
+      "reflect-metadata"
+    ],
+    "esModuleInterop": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
+  },
+  "exclude": [
+    "node_modules",
+    //  "**/*.spec.ts"
+  ],
+  "include": [
+    "./src/**/*"
+  ]
+}

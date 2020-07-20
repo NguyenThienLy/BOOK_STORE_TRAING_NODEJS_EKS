@@ -1,0 +1,29 @@
+<header class="header d-flex align-items-center top-0 left-50 z-index-2 position-sticky w-100 h-primary light-dark-bg-color">
+    <a class="header-link" routerLink="">
+        <img class="header__logo" routerLink="" src="https://www.nashtechglobal.com/wp-content/themes/nashtech/library/images/NashTech-logo-new.svg">
+    </a>
+
+    <ol class="header__list m-0 mb-0 d-flex justify-content-center ff-secondary">
+        <li *ngFor="let category of categories; let i = index" class="header__item primary-txt-color">0{{i + 1}}.
+            <a class="cursor-pointer header__link ml-7 gray-txt-color txt-decoration-none">{{category.name}}</a>
+        </li>
+    </ol>
+
+    <!-- <ol *ngIf="categories?.length === 0" class="header__list m-0 mb-0 d-flex justify-content-center ff-secondary">
+        <li class="header__item primary-txt-color">
+            <nz-skeleton-element nzType="button" [nzActive]="true"></nz-skeleton-element>
+        </li>
+
+        <li class="header__item primary-txt-color">
+            <nz-skeleton-element nzType="button" [nzActive]="true"></nz-skeleton-element>
+        </li>
+
+        <li class="header__item primary-txt-color">
+            <nz-skeleton-element nzType="button" [nzActive]="true"></nz-skeleton-element>
+        </li>
+    </ol> -->
+    <span class="gray-txt-color ff-secondary fs-primary">{{userDetails.firstName}}&nbsp;{{userDetails.lastName}}</span>
+    <a (click)="onLogout()" class="btn btn--small ml-3 txt-decoration-none primary-txt-color ff-secondary border-round txt-align-center primary-bd-color">Logout</a>
+    <!-- <a *ngIf="user === null" routerLink="/auth/login" routerLinkActive="active" class="btn btn--small ml-5 txt-decoration-none primary-txt-color ff-secondary border-round txt-align-center primary-bd-color">Login</a>
+    <a *ngIf="user !== null" routerLink="/admin/book/main" routerLinkActive="active" class="btn btn--small ml-5 txt-decoration-none primary-txt-color ff-secondary border-round txt-align-center primary-bd-color">Dashboard</a> -->
+</header>

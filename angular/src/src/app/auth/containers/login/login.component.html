@@ -1,0 +1,32 @@
+<nz-spin [nzSpinning]="(status$ | async) === 'loading'">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmitForm(loginForm.value)" class="form light-dark-bg-color p-3 d-flex flex-column">
+        <div class="form_header d-flex justify-content-center align-items-center fs-22 primary-txt-color fw-bold">
+            Log in
+        </div>
+
+        <div class="form__body">
+            <div class="form__field">
+                <p class="form_label fs-11 ff-secondary gray-txt-color">
+                    EMAIL
+                </p>
+                <input class="w-100 form__input ff-secondary dark-txt-color" placeholder="email@sample.com" name="email" id="email" formControlName="email">
+            </div>
+
+            <div class="form__field mt-3">
+                <p class="form_label fs-11 ff-secondary gray-txt-color">
+                    PASSWORD
+                </p>
+                <input type="password" class="w-100 form__input ff-secondary dark-txt-color" placeholder="enter password" name="password" id="password" formControlName="password">
+            </div>
+        </div>
+
+        <div class="form__footer d-flex flex-column justify-content-center align-items-start mt-sm-2">
+            <button type="submit" class="btn cursor-pointer btn--full mt-1 d-flex light-dark-bg-color align-items-center justify-content-center txt-decoration-none primary-txt-color ff-secondary primary-bd-color">
+      Log In
+    </button>
+
+            <a class="fs-13 form__text fw-600 light-txt-color p-0 mt-2 w-100 txt-align-center txt-decoration-none" [routerLink]="['../register']">Creat new
+      account now!</a>
+        </div>
+    </form>
+</nz-spin>

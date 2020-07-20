@@ -1,0 +1,46 @@
+<nz-spin [nzSpinning]="(status$ | async) === 'loading'">
+    <form [formGroup]="createUserForm" (ngSubmit)="onSubmitForm(createUserForm.value)" class="form form--big light-dark-bg-color p-3 d-flex flex-column">
+        <div class="form_header d-flex justify-content-center align-items-center fs-22 primary-txt-color fw-bold">
+            Register
+        </div>
+
+
+        <div class="form__body">
+            <div class="form__field">
+                <p class="form_label  fs-11 ff-secondary gray-txt-color">
+                    FULL NAME
+                </p>
+                <input class="w-100 form__input ff-secondary dark-txt-color" placeholder="enter full name" name="full name" id="fullName" formControlName="fullName">
+            </div>
+
+            <div class="form__field mt-3">
+                <p class="form_label  fs-11 ff-secondary gray-txt-color">
+                    EMAIL
+                </p>
+                <input class="w-100 form__input ff-secondary dark-txt-color" placeholder="email@sample.com" name="email" id="email" formControlName="email">
+            </div>
+
+            <div class="form__field mt-3">
+                <p class="form_label  fs-11 ff-secondary gray-txt-color">
+                    PASSWORD
+                </p>
+                <input type="password" class="w-100 form__input ff-secondary dark-txt-color" placeholder="enter password" name="password" id="password" formControlName="password">
+            </div>
+
+        </div>
+
+
+        <div class="form__footer d-flex flex-column justify-content-center align-items-start">
+
+            <p class="pl-4 pr-4 m-0 gray-txt-color fs-13 txt-align-center">By creating an account you agree to the <a class="fs-13 form__text fw-600 primary-txt-color p-0 txt-decoration-none">
+        Terms of Service </a> and <a class="fs-13 form__text fw-600 primary-txt-color p-0 txt-decoration-none">Privacy
+        Policy</a></p>
+
+            <button target="_blank" type="submit" class="btn cursor-pointer mt-2 btn--full light-dark-bg-color d-flex align-items-center justify-content-center txt-decoration-none primary-txt-color ff-secondary primary-bd-color">
+      Creating now
+    </button>
+
+            <a class="fs-13 form__text fw-600 light-txt-color p-0 mt-2 w-100 txt-align-center txt-decoration-none" [routerLink]="['../login']">Login now!</a>
+        </div>
+    </form>
+</nz-spin>

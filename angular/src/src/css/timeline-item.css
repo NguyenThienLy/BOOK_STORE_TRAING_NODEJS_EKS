@@ -1,0 +1,9 @@
+.timeline-item {
+  width: 70%;
+  padding: 0 20px;
+}
+
+.timeline-item__header {
+  font-size: 19px;
+}
+

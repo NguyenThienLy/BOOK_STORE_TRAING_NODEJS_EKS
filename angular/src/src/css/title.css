@@ -1,0 +1,15 @@
+.title {
+  font-size: 24px;
+}
+
+.title__number {
+  margin-right: 7px;
+  font-size: 20px;
+}
+
+.title__line {
+  border-top: 0.5px solid #ccd6f6;
+  width: 300px;
+  height: 0.5px;
+}
+

@@ -1,0 +1,19 @@
+.d-flex {
+  display: flex;
+}
+
+.d-grid {
+ display: grid;
+}
+
+.d-block {
+  display: block;
+}
+
+.d-none {
+  display: none;
+}
+
+.d-inline-block {
+  display: inline-block;
+}

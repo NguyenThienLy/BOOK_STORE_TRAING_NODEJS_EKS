@@ -1,0 +1,12 @@
+.transform-translate-X--50 {
+  transform: translateX(-50);
+}
+
+.transform-translate-X-50 {
+  transform: translateX(50);
+}
+
+
+.transform-rotate-90 {
+  transform: rotate(90deg);
+}

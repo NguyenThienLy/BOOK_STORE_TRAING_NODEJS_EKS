@@ -1,0 +1,33 @@
+.header-main-book {
+    padding: 20px 0;
+}
+
+.header-main-book__button {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.ml-1 {
+    margin-left: 10px;
+}
+
+.container-empty {
+    display: flex;
+    height: 300px;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-skeleton {}
+
+.loading-book {
+    background-color: #172a45;
+    padding: 15px 10px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: stretch;
+}
+
+.loading-book__item {
+    margin: 0 10px;
+}

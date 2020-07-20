@@ -1,0 +1,27 @@
+.breadcrumb {
+    height: 100px;
+    padding: 10px 16px;
+    box-sizing: border-box;
+    padding-left: 0;
+    list-style: none;
+    background-color: #fefefe;
+}
+
+.breadcrumb__item {
+    display: inline;
+}
+
+.breadcrumb__item+li:before {
+    padding: 8px;
+    color: #fefefe;
+    content: "/\00a0";
+}
+
+.breadcrumb__link {
+    color: #0275d8;
+}
+
+.breadcrumb__link:hover {
+    color: #0aeeb9;
+    text-decoration: underline;
+}

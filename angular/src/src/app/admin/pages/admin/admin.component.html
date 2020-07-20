@@ -1,0 +1,50 @@
+<nz-layout class="app-layout">
+    <nz-sider class="menu-sidebar" nzCollapsible nzWidth="256px" nzBreakpoint="md" [(nzCollapsed)]="isCollapsed" [nzTrigger]="null">
+        <div class="sidebar-logo">
+            <a routerLink="">
+                <img src="https://www.nashtechglobal.com/wp-content/themes/nashtech/library/images/NashTech-logo-new.svg" alt="logo">
+                <h1>Manager book store</h1>
+            </a>
+        </div>
+
+        <ul nz-menu class="sider-menu" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
+            <li nz-submenu nzOpen nzTitle="Book" nzIcon="book">
+                <ul>
+                    <li nz-menu-item nzMatchRouter>
+                        <a routerLink="book/main">Main</a>
+                    </li>
+
+                    <li nz-menu-item nzMatchRouter>
+                        <a routerLink="book/create">Create</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nz-sider>
+    <nz-layout>
+        <nz-header>
+            <div class="app-header" nz-row>
+
+                <div nz-col [nzSpan]="6">
+                    <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
+            <i class="trigger" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"></i>
+          </span>
+                </div>
+
+                <div nz-col [nzSpan]="14" [nzOffset]="1" class="app-header__user">
+                    <!-- <nz-avatar *ngIf="(user$ | async)" nzIcon="user" nzSrc="{{(user$ | async).avatar}}"></nz-avatar> -->
+                    <span nz-typography nzType="secondary"><strong>{{userDetails.firstName}}&nbsp;{{userDetails.lastName}}</strong></span>
+                </div>
+
+                <div nz-col [nzSpan]="2" [nzOffset]="1" class="app-header__button">
+                    <button nz-button nzType="danger" (click)="onLogout()" nzGhost><i nz-icon nzType="logout"></i></button>
+                </div>
+            </div>
+        </nz-header>
+        <nz-content>
+            <div class="inner-content">
+                <router-outlet></router-outlet>
+            </div>
+        </nz-content>
+    </nz-layout>
+</nz-layout>

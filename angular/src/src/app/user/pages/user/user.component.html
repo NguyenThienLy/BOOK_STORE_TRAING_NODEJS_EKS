@@ -1,0 +1,16 @@
+<div class="container">
+    <!-- <app-header-book-store [user]="user$ | async" [categories]="categories$ | async"></app-header-book-store> -->
+    <app-header-book-store [userDetails]="userDetails" [categories]="categories$ | async"></app-header-book-store>
+
+    <app-email></app-email>
+
+    <app-social></app-social>
+
+    <main class="body-page position-relative">
+        <router-outlet class="m-0 p-0"></router-outlet>
+    </main>
+
+    <footer class="h-primary w-100 d-flex justify-content-center align-items-center dark-bg-color">
+        <a class="h-primary primary-txt-color d-flex justify-content-center align-items-center ff-secondary">Clone and build by Nguyen Thien Ly</a>
+    </footer>
+</div>

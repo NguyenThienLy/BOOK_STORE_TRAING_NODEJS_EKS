@@ -1,0 +1,46 @@
+<div class="other-project light-dark-bg-color border-round d-flex flex-column">
+    <div class="d-flex justify-content-between">
+        <i nz-icon class="other-project__icon primary-txt-color" nzType="book" nzTheme="outline"></i>
+
+        <ul class="list-item mt-0 pl-0 d-flex">
+
+            <li class="list-item__item ml-0">
+                <a class="list-item__link txt-decoration-none dark-gray-txt-color ff-secondary" title="date">
+                    <i nz-icon nzType="edit" nzTheme="outline"></i> {{book.createdAt | date: 'dd/MM/yyyy'}}
+                </a>
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="other-project__body">
+        <h3 class="gray-txt-color fs-20">
+            <a routerLink="/{{book.slug}}" class="gray-txt-color txt-decoration-none fw-bold" title="{{book.title}}">
+            {{ (book.title.length > 25) ? (book.title | slice:0:25)+'..':(book.title) }}
+      </a>
+        </h3>
+        <p class="mt-0 dark-gray-txt-color fs-secondary">
+            {{ (book.description.length > 250) ? (book.description | slice:0:250)+'..':(book.description) }}
+            <span class="primary-txt-color"></span>
+        </p>
+    </div>
+
+    <div class="other-project__footer d-flex align-items-end">
+
+        <ul class="list-item mt-0 mb-0 pl-0 d-flex">
+
+            <li class="list-item__item ml-0">
+                <a class="list-item__link txt-decoration-none dark-gray-txt-color ff-secondary" title="author">
+                    <i nz-icon nzType="user" nzTheme="outline"></i> {{book.author.name}}
+
+                </a>
+            </li>
+
+            <li class="list-item__item ml-2">
+                <a class="list-item__link txt-decoration-none dark-gray-txt-color ff-secondary" title="category">
+                    <i nz-icon nzType="tag" nzTheme="outline"></i> {{book.category.name}}
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

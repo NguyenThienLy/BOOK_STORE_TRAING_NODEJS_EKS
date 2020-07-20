@@ -1,0 +1,16 @@
+.project {
+    height: 550px;
+    box-sizing: border-box;
+}
+
+.project__content {
+    width: 45%;
+}
+
+.project__src {
+    height: 400px;
+}
+
+.project__src-sub {
+    height: 100px;
+}

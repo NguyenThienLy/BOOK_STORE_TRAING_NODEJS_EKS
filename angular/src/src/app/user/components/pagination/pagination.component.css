@@ -1,0 +1,17 @@
+.pagination {
+  width: 100%;
+}
+
+.pagination__item {
+  margin: 0 5px;
+  padding: 8px 16px;
+}
+
+.pagination__item--active {
+  background-color: #145c4b;
+  color: white;
+}
+
+.pagination__item:hover:not(.pagination__item--active) {
+  background-color: #145c4b;
+}

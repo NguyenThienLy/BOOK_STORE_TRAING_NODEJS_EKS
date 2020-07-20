@@ -1,0 +1,35 @@
+.form {
+  width: 380px;
+  height: 424px;
+}
+
+.form--big {
+  height: 630px;
+}
+
+.form_header {
+  height: 80px;
+}
+
+.form__body {
+  flex-grow: 2
+}
+
+.form__input {
+  box-sizing: border-box;
+  padding: 0 10px;
+  height: 48px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+.form__footer {
+  height: 170px;
+}
+
+.form__text:hover {
+  color: #0aeeb9;
+  text-decoration: underline;
+}
+

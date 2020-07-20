@@ -1,0 +1,52 @@
+version: '3'
+
+services:
+
+  angular:
+    container_name: my_angular_book_store_frontend
+    build: "./angular"
+    restart: always
+    ports:
+      - "8888:80"
+    volumes:
+      - "./angular/src:/usr/src/book_store_frontend"
+      - "/usr/src/book_store_frontend/node_modules"
+
+  nodejs:
+    container_name: my_nodejs_book_store_service
+    build: "./nodejs"
+    restart: always
+    ports:
+      - "9001:9001"
+      - "9229:9229"
+    volumes:
+      - "./nodejs/src:/usr/src/book_store_service"
+      - "/usr/src/book_store_service/node_modules"
+    command: npm run dev
+
+  postgres:
+    image: postgres:12.2
+    container_name: postgres
+    environment:
+        POSTGRES_DB: keycloak
+        POSTGRES_USER: keycloak
+        POSTGRES_PASSWORD: password
+    ports:
+      - 5432:5432
+
+  keycloak:
+    image: quay.io/keycloak/keycloak:latest
+    container_name: my_keycloak_book_store
+    environment:
+        DB_VENDOR: POSTGRES
+        DB_ADDR: postgres
+        DB_DATABASE: keycloak
+        DB_USER: keycloak
+        DB_PASSWORD: password
+        KEYCLOAK_USER: admin
+        KEYCLOAK_PASSWORD: password
+        PROXY_ADDRESS_FORWARDING: "true"
+    ports:
+      - 8080:8080
+    depends_on:
+      - postgres

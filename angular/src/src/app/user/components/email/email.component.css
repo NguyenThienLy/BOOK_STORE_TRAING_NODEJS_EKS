@@ -1,0 +1,17 @@
+.email {
+  right: 0;
+  width: 10%;
+}
+
+.email__content {
+  margin-bottom: 160px;
+}
+
+.email__content:hover {
+  color: #0aeeb9;
+}
+
+.email__line {
+  border-left: 1px solid #8892b0;
+  height: 100px;
+}

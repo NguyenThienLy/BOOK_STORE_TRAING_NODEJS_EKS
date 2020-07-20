@@ -1,0 +1,12 @@
+.project {
+  height: 400px;
+  position: relative;
+}
+
+.project__content {
+  width: 45%;
+}
+
+.project__src {
+  height: 400px;
+}

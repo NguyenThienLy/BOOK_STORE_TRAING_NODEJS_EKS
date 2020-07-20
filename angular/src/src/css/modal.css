@@ -1,0 +1,36 @@
+.modal {
+  overflow: auto;
+}
+
+.modal__header {
+  margin: auto;
+  border: 1px solid;
+}
+
+.modal__header__close:hover,
+.modal__header__close:focus {
+  color: var(--dark-color);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal__content {
+  margin: auto;
+  height: 70%;
+  max-height: 70%;
+  overflow-y: auto;
+}
+
+.modal__content::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px  var(--light-color);
+  background-color:  var(--light-color);
+}
+
+.modal__content::-webkit-scrollbar {
+  width: 10px;
+  background-color: var(--light-color);
+}
+
+.modal__content::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+}

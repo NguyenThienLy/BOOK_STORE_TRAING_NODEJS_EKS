@@ -1,0 +1,25 @@
+.list-item {
+    list-style-type: none;
+}
+
+.list-item__item {}
+
+.list-item__item--ml-0 {
+    margin-left: 0;
+}
+
+.list-item__link {
+    font-size: 13px;
+}
+
+.list-item__link--big {
+    font-size: 25px;
+}
+
+.list-item__link--medium {
+    font-size: 20px;
+}
+
+.list-item__link:hover {
+    color: #0aeeb9;
+}

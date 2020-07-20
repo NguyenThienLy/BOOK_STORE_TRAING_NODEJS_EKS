@@ -1,0 +1,21 @@
+.social {
+    width: 10%;
+}
+
+.social__list {
+    list-style-type: none;
+    line-height: 55px;
+}
+
+.social__item:hover .social__link {
+    color: var(--primary-color);
+}
+
+.social__item:hover {
+    transform: translateY(-3px);
+}
+
+.social__line {
+    border-left: 1px solid var(--dark-gray-color);
+    height: 100px;
+}

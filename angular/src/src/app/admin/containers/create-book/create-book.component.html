@@ -1,0 +1,109 @@
+<div>
+    <nz-row class="header-create-book">
+        <nz-col [nzSpan]="20">
+            <nz-breadcrumb>
+                <nz-breadcrumb-item>
+                    Dashboard
+                </nz-breadcrumb-item>
+                <nz-breadcrumb-item>
+                    Book
+                </nz-breadcrumb-item>
+                <nz-breadcrumb-item>
+                    Create
+                </nz-breadcrumb-item>
+            </nz-breadcrumb>
+        </nz-col>
+    </nz-row>
+
+    <form [formGroup]="createBookForm" (ngSubmit)="onSubmitForm(createBookForm.value)" nz-form enctype="multipart/form-data">
+        <p nz-typography>1. <strong>Image (type .jpg, max 4 pic) | First image is dedault main image</strong></p>
+        <nz-form-item>
+            <nz-upload class="avatar-uploader" nzAccept=".jpg" nzAction="https://www.mocky.io/v2/5cc8019d300000980a055e76" nzListType="picture-card" (nzChange)="onChangeListUpload()" [(nzFileList)]="fileList" [nzShowButton]="fileList.length < 4" [nzMultiple]="true">
+                <i nz-icon nzType="plus"></i>
+
+                <div class="ant-upload-text">Upload</div>
+            </nz-upload>
+        </nz-form-item>
+
+        <p nz-typography>2. <strong>Name* (max 35 char)</strong></p>
+
+        <nz-form-item>
+            <nz-form-control nzErrorTip="Please input book title!">
+                <input nz-input placeholder="Enter title" class="ff-secondary" onKeyPress="if(this.value.length===35) return false;" nzSize="large" id="title" formControlName="title" />
+            </nz-form-control>
+        </nz-form-item>
+
+        <nz-row>
+            <nz-col [nzSpan]="6">
+                <p nz-typography>3. <strong>Category*</strong> </p>
+                <nz-form-item>
+                    <nz-form-control nzErrorTip="Please input book category!">
+                        <nz-select nzAllowClear nzPlaceHolder="Choose category" class="ff-secondary" nzSize="large" id="category" formControlName="category">
+                            <nz-option class="ff-secondary" *ngFor="let category of categories$ | async; let i = index" nzValue={{category._id}} nzLabel={{category.name}}></nz-option>
+                        </nz-select>
+                    </nz-form-control>
+                </nz-form-item>
+            </nz-col>
+
+            <nz-col [nzSpan]="8" [nzOffset]="1">
+                <p nz-typography>4. <strong>Author*</strong> </p>
+                <nz-form-item>
+                    <nz-form-control nzErrorTip="Please input book author!">
+                        <nz-select nzAllowClear nzPlaceHolder="Choose author" class="ff-secondary" nzSize="large" id="author" formControlName="author">
+                            <nz-option class="ff-secondary" *ngFor="let author of authors$ | async; let i = index" nzValue={{author._id}} nzLabel={{author.name}}></nz-option>
+                        </nz-select>
+                    </nz-form-control>
+                </nz-form-item>
+            </nz-col>
+
+            <nz-col [nzSpan]="8" [nzOffset]="1">
+                <p nz-typography>5. <strong>Publishing*</strong> </p>
+                <nz-form-item>
+                    <nz-form-control nzErrorTip="Please input book publishing!">
+                        <nz-select nzAllowClear nzPlaceHolder="Choose publishing" class="ff-secondary" nzSize="large" id="publishing" formControlName="publishing">
+                            <nz-option class="ff-secondary" *ngFor="let publishing of publishings$ | async; let i = index" nzValue={{publishing._id}} nzLabel={{publishing.name}}></nz-option>
+                        </nz-select>
+                    </nz-form-control>
+                </nz-form-item>
+            </nz-col>
+        </nz-row>
+
+        <nz-row>
+            <nz-col [nzSpan]="6">
+                <p nz-typography>6. <strong>Price ($)</strong></p>
+
+                <nz-form-item>
+                    <nz-form-control nzErrorTip="Please input book price!">
+                        <nz-input-number [nzMin]="1" class="ff-secondary" nzSize="large" [nzMax]="100" [nzStep]="1" id="price" formControlName="price">
+                        </nz-input-number>
+                    </nz-form-control>
+                </nz-form-item>
+            </nz-col>
+
+            <nz-col [nzSpan]="6" [nzOffset]="1">
+                <p nz-typography>7. <strong>Quantity (Per)</strong></p>
+
+                <nz-form-item>
+                    <nz-form-control nzErrorTip="Please input book quantity!">
+                        <nz-input-number [nzMin]="1" class="ff-secondary" nzSize="large" [nzMax]="100" [nzStep]="1" id="quantity" formControlName="quantity">
+                        </nz-input-number>
+                    </nz-form-control>
+                </nz-form-item>
+            </nz-col>
+        </nz-row>
+
+        <p nz-typography>8. <strong>Description* (max 300 char)</strong> </p>
+
+        <nz-form-item>
+            <nz-form-control nzErrorTip="Please input book description">
+                <textarea nz-input nzSize="large" class="ff-secondary" onKeyPress="if(this.value.length===300) return false;" placeholder="Enter description" [nzAutosize]="{ minRows: 4, maxRows: 6 }" id="description" formControlName="description"></textarea>
+            </nz-form-control>
+        </nz-form-item>
+
+        <nz-form-item>
+            <nz-form-control>
+                <button nz-button nzType="primary" class="ff-secondary" nzGhost nzSize="large">Creating new book</button>
+            </nz-form-control>
+        </nz-form-item>
+    </form>
+</div>

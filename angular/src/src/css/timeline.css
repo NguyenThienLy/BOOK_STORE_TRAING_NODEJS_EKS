@@ -1,0 +1,29 @@
+.timeline__tab {
+  background-color: transparent;
+  width: 20%;
+  height: 300px;
+}
+
+.timeline__btn{
+  background-color: inherit;
+  outline: none;
+  border-left: 2px solid;
+  padding: 10px 16px;
+  font-size: 13px;
+  opacity: 0.6;
+}
+
+.timeline__btn:hover {
+  background-color: var(--medium-dark-color);
+  color: var(--primary-color);
+  opacity: 1;
+}
+
+.timeline__btn--active {
+  background-color: var(--medium-dark-color);
+  color: var(--primary-color);
+  opacity: 1;
+}
+
+
+

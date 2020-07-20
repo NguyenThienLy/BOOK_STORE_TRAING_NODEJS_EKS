@@ -1,0 +1,20 @@
+<div *ngIf="(books$ | async)?.length > 0">
+    <div class="mt-secondary d-grid grid-col-3 grid-gap-2">
+        <app-book-card *ngFor="let book of books$ | async; let i = index" [book]="book">
+        </app-book-card>
+    </div>
+
+    <app-pagination></app-pagination>
+</div>
+
+<div *ngIf="(books$ | async)?.length === 0" class="container-book-list d-flex align-items-center justify-content-center">
+    <nz-empty></nz-empty>
+</div>
+
+<div *ngIf="(status$ | async) === 'loading'">
+    <div class="mt-secondary d-grid grid-col-3 grid-gap-2 mb-5">
+        <nz-skeleton [nzActive]="true" class="load-book d-flex align-items-center light-dark-bg-color border-round"></nz-skeleton>
+        <nz-skeleton [nzActive]="true" class="load-book d-flex align-items-center light-dark-bg-color border-round"></nz-skeleton>
+        <nz-skeleton [nzActive]="true" class="load-book d-flex align-items-center light-dark-bg-color border-round"></nz-skeleton>
+    </div>
+</div>

@@ -1,0 +1,50 @@
+<div class="project d-flex flex-column justify-content-center position-relative">
+    <div class="d-flex flex-column justify-content-center align-items-end">
+        <div class="project__title">
+            <p class="ff-secondary primary-txt-color fs-primary">
+                Featured Book
+            </p>
+            <h2 class="project__name gray-txt-color txt-align-right fs-22 fw-bold">
+                {{book.title}}
+            </h2>
+        </div>
+
+        <p class="project__content z-index-1 border-0 p-2 m-0 gray-txt-color light-dark-bg-color border-round fs-secondary txt-align-right">
+            {{book.description}}
+
+            <span class="primary-txt-color">This is awesome book</span>
+        </p>
+
+        <ul class="list-item pl-0 d-flex mt-2">
+            <li class="list-item__item ml-0">
+                <a class="list-item__link txt-decoration-none dark-gray-txt-color ff-secondary" title="author">
+                    <i nz-icon nzType="user" nzTheme="outline"></i> {{book.author.name}}
+
+                </a>
+            </li>
+
+            <li class="list-item__item ml-2">
+                <a class="list-item__link txt-decoration-none dark-gray-txt-color ff-secondary" title="category">
+                    <i nz-icon nzType="tag" nzTheme="outline"></i> {{book.category.name}}
+                </a>
+            </li>
+
+            <li class="list-item__item ml-2">
+                <a class="list-item__link txt-decoration-none dark-gray-txt-color ff-secondary" title="publishing">
+                    <i nz-icon nzType="highlight" nzTheme="outline"></i> {{book.publishing.name}}
+                </a>
+            </li>
+        </ul>
+
+    </div>
+
+    <div class="z-index-0 position-absolute d-flex flex-column w-60">
+        <img class="project__src border-round w-100" src={{book.mainImg}} alt="Ecommerce web app">
+
+        <div class="d-grid grid-col-4 grid-gap-1 w-100 mt-2">
+            <div *ngFor="let img of book.subImgs">
+                <img class="project__src-sub border-round w-100 mr-1" src={{img}} alt="Ecommerce web app">
+            </div>
+        </div>
+    </div>
+</div>

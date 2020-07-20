@@ -1,0 +1,32 @@
+<div *ngIf="book$ | async" class="h-100">
+
+    <app-breadcrumb [slug]="slug"></app-breadcrumb>
+
+    <app-book-card-detail [book]="book$ | async"></app-book-card-detail>
+
+    <section *ngIf="(bookSameCategory$ | async)?.length > 0" class="about-me mt-150 mb-5 d-flex flex-column align-items-center">
+        <div class="title d-flex justify-content-start align-items-center ">
+            <div class="title__line mr-1"></div>
+            <div class="gray-txt-color fw-600 fs-20">Same category</div>
+            <div class="title__line ml-1"></div>
+        </div>
+
+        <div class=" mt-secondary d-grid grid-col-3 grid-gap-2">
+            <app-book-card *ngFor="let book of bookSameCategory$ | async" (onSelectBookChange)="onReloadComponent($event)" [book]="book">
+            </app-book-card>
+        </div>
+    </section>
+
+    <section *ngIf="(bookSameAuthor$ | async)?.length > 0 " class="about-me mt-150 mb-5 d-flex flex-column align-items-center">
+        <div class="title d-flex justify-content-start align-items-center ">
+            <div class="title__line mr-1"></div>
+            <div class="gray-txt-color fw-600 fs-20">Same author</div>
+            <div class="title__line ml-1"></div>
+        </div>
+
+        <div class=" mt-secondary d-grid grid-col-3 grid-gap-2">
+            <app-book-card *ngFor="let book of bookSameAuthor$ | async" (onSelectBookChange)="onReloadComponent($event)" [book]="book">
+            </app-book-card>
+        </div>
+    </section>
+</div>

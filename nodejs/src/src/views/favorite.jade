@@ -1,0 +1,109 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    link(rel='stylesheet', href='./css/logo.css')
+    link(rel='stylesheet', href='./css/menu.css')
+    link(rel='stylesheet', href='./css/alert.css')
+    link(rel='stylesheet', href='./css/button.css')
+    link(rel='stylesheet', href='./css/avatar.css')
+    link(rel='stylesheet', href='./css/social.css')
+    link(rel='stylesheet', href='./css/title.css')
+    link(rel='stylesheet', href='./css/footer.css')
+    link(rel='stylesheet', href='./css/email.css')
+    link(rel='stylesheet', href='./css/location-info.css')
+    link(rel='stylesheet', href='./css/table.css')
+    link(rel='stylesheet', href='./css/modal.css')
+    link(rel='stylesheet', href='./css/confirm.css')
+    link(rel='stylesheet', href='./css/container/header.css')
+    link(rel='stylesheet', href='./css/container/body.css')
+    link(rel='stylesheet', href='./css/container/pagination.css')
+    link(rel='stylesheet', href='./css/container/google-map.css')
+    link(rel='stylesheet', href='./css/container/dark-sky.css')
+    link(rel='stylesheet', href='./css/page/favorite.css')
+    link(href='https://fonts.googleapis.com/css?family=Fira+Code:300,400,500|Roboto&display=swap', rel='stylesheet')
+    script(src='https://kit.fontawesome.com/4413904649.js', crossorigin='anonymous')
+  body
+    .header
+      #headerPage
+      a.header__logo.logo(href='./')
+        img.logo__img(src='https://www.nashtechglobal.com/wp-content/themes/nashtech/library/images/NashTech-logo-new.svg', alt='')
+      ol.header__menu.menu
+        li.menu__item
+          span.menu_span 01.
+          a.menu__item__taga(href='./') Home
+        li.menu__item
+          span.menu_span 02.
+          a.menu__item__taga(href='./favorite') Favorite
+      if isAuthenticated
+        .header__username
+          span.title.title--small
+            i.far.fa-user.title__icon
+            | #{user.firstName} #{user.lastName}
+        .header__button
+          a.btn(href='/api/v1/user/logout') Logout
+      else
+        .header__button
+          a.btn(href='/api/v1/user/auth/google') Login
+    .social
+      ul.social__list
+        li
+          span.social__list__item
+            i.fab.fa-lg.fa-github
+        li
+          span.social__list__item
+            i.fab.fa-lg.fa-linkedin-in
+        li
+          span.social__list__item
+            i.fab.fa-lg.fa-facebook-f
+        li
+          span.social__list__item
+            i.fab.fa-lg.fa-instagram
+      .social__line
+    .email
+      p.email__content Strong.Team2@nashtechglobal.com
+      .email__line
+    .body#bodyFavorite
+      span.title.body__title Weather Forecast Browsing
+      
+      if isAuthenticated
+        table.table
+          tbody#tableBodyFavorite
+
+        .pagination#paginationFavorite
+      else 
+        span.title.body__title Login to view favorite
+    .footer
+      a.footer__Link Design and build by Team 2
+    #myModal.modal
+      .modal__header
+        #containerAlert
+        span#modalHeader.modal__header__content View location
+        span.modal__header__close ×
+      #modalContent.modal__content
+        .google-map.body__google-map
+          #googleMap.google-map__content  
+          input.controls#pac-input(type="text" placeholder="Search Box") 
+        .location-info.location-info--secondary.body__location-info
+          span.location-info__title.location-info__title--secondary Location Info
+          p.location-info__content.location-info__content--secondary#contentName Name: 
+          p.location-info__content.location-info__content--secondary#contentAddress Address: 
+        .dark-sky.body__dark-sky
+          iframe#fremeWeather(style='height: 100%;', src='https://maps.darksky.net/@temperature,10.731,466.795,9', width='100%', height='150', frameborder='0')
+         #containerButton
+   
+    #myConfirm.confirm
+      .confirm__header
+        span#confirmHeader.confirm__header__content Delete location
+        span.confirm__header__close ×
+      #confirmContent.confirm__content
+      .confirm__footer
+        a.btn.btn--small(onclick='onCancel()') Cancel
+        a#btnOkeConfirm.btn.btn--small.btn--warning.btn--ml-10(onClick='onOk(this)') Oke
+
+    script(src='./js/varibles.js')
+    script(src='./js/elements.js')
+    script(src='./js/container/googleMap.js')
+    script(src='./js/handleTable.js')
+    script(async='', defer='', src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAIPZ83n_wfOeQ5aOdBGN-vLRrxD5aH9xg&libraries=places&callback=initMap')
+    script(src='https://momentjs.com/downloads/moment.min.js')

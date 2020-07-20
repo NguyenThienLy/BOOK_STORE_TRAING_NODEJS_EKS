@@ -1,0 +1,24 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.categoryController = exports.publishingController = exports.authorController = exports.imageController = exports.bookController = exports.userController = exports.CrudController = void 0;
+var crud_1 = require("./crud");
+Object.defineProperty(exports, "CrudController", { enumerable: true, get: function () { return crud_1.CrudController; } });
+var user_1 = require("./crud/user");
+var book_1 = require("./crud/book");
+var image_1 = require("./crud/image");
+var author_1 = require("./crud/author");
+var publishing_1 = require("./crud/publishing");
+var category_1 = require("./crud/category");
+var userController = new user_1.UserController();
+exports.userController = userController;
+var bookController = new book_1.BookController();
+exports.bookController = bookController;
+var imageController = new image_1.ImageController();
+exports.imageController = imageController;
+var authorController = new author_1.AuthorController();
+exports.authorController = authorController;
+var publishingController = new publishing_1.PublishingController();
+exports.publishingController = publishingController;
+var categoryController = new category_1.CategoryController();
+exports.categoryController = categoryController;
+//# sourceMappingURL=index.js.map

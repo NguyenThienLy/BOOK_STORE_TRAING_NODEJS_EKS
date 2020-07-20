@@ -1,0 +1,24 @@
+.avatar {
+}
+
+.avatar__container {
+    height: 300px;
+    width: 300px;
+    overflow: hidden;
+}
+
+.avatar__border {
+    height: 300px;
+    width: 300px;
+    right: -4%;
+    top: 5%;
+    border: 1px solid var(--primary-color);
+}
+
+.avatar__container:hover  + .avatar__border {
+    position: absolute;
+    right: -3%;
+    top: 3%;
+}
+
+

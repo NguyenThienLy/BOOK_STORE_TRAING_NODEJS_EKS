@@ -1,0 +1,18 @@
+.other-project {
+  height: 360px;
+  padding: 30px 20px;
+  box-sizing: border-box;
+}
+
+.other-project:hover {
+  transform: translateY(-5px);
+}
+
+.other-project__icon {
+  font-size: 40px;
+}
+
+.other-project__body {
+  flex-grow: 2
+}
+

@@ -1,0 +1,102 @@
+<div>
+    <nz-row class="header-main-book">
+        <nz-breadcrumb>
+            <nz-breadcrumb-item>
+                Dashboard
+            </nz-breadcrumb-item>
+            <nz-breadcrumb-item>
+                Book
+            </nz-breadcrumb-item>
+            <nz-breadcrumb-item>
+                Main
+            </nz-breadcrumb-item>
+        </nz-breadcrumb>
+    </nz-row>
+
+    <nz-row class="header-main-book">
+        <nz-col [nzSpan]="12">
+            <a routerLink="../create" nz-button nzType="primary" nzGhost nzSize="large"><i nz-icon nzType="plus-circle"></i>New book</a>
+        </nz-col>
+
+        <nz-col [nzSpan]="12" class="header-main-book__button">
+            <button class="ml-1" (click)="onRefresh()" nz-button nzType="primary" title="Refresh" nzGhost nzShape="circle" nzSize="large"><i nz-icon nzType="check-circle" nzTheme="outline"></i></button>
+        </nz-col>
+    </nz-row>
+
+    <nz-table *ngIf="(books$ | async)?.length > 0" #basicTable [nzData]="books$ | async">
+        <thead>
+            <tr>
+                <th>TITLE</th>
+                <th>AUTHOR</th>
+                <th>CATEGORY</th>
+                <th>PUBLISHING</th>
+                <th>PRICE & QUANTITY</th>
+                <th>ACTION</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let book of books$ | async">
+                <td>{{ book.title }}</td>
+                <td>{{ book.author.name }}</td>
+                <td>{{ book.category.name }}</td>
+                <td>{{ book.publishing.name }}</td>
+                <td>{{ book.price }} $ | {{ book.quantity }} book</td>
+                <td>
+                    <a nz-button nzType="primary" nzGhost routerLink="../update/{{book.slug}}">Update</a>
+                    <nz-divider nzType="vertical"></nz-divider>
+                    <button nz-button nzType="default" nzDanger (click)="delete(book._id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </nz-table>
+
+    <div *ngIf="(books$ | async)?.length === 0" class="container-empty">
+        <nz-empty></nz-empty>
+    </div>
+
+    <div *ngIf="(status$ | async) === 'loading'" class="container-skeleton">
+        <div class="loading-book">
+            <nz-skeleton-element nzType="input" class="loading-book__item" [nzActive]="true"></nz-skeleton-element>
+            <nz-skeleton-element nzType="input" class="loading-book__item" [nzActive]="true"></nz-skeleton-element>
+            <nz-skeleton-element nzType="input" class="loading-book__item" [nzActive]="true"></nz-skeleton-element>
+            <nz-skeleton-element nzType="input" class="loading-book__item" [nzActive]="true"></nz-skeleton-element>
+            <nz-skeleton-element nzType="input" class="loading-book__item loading-book__item--large" [nzActive]="true"></nz-skeleton-element>
+        </div>
+
+        <div class="loading-book">
+            <nz-skeleton-element nzType="input" class="loading-book__item" [nzActive]="true"></nz-skeleton-element>
+            <nz-skeleton-element nzType="input" class="loading-book__item" [nzActive]="true"></nz-skeleton-element>
+            <nz-skeleton-element nzType="input" class="loading-book__item" [nzActive]="true"></nz-skeleton-element>
+            <nz-skeleton-element nzType="input" class="loading-book__item" [nzActive]="true"></nz-skeleton-element>
+            <nz-skeleton-element nzType="input" class="loading-book__item" [nzActive]="true"></nz-skeleton-element>
+            <nz-skeleton-element nzType="input" class="loading-book__item" [nzActive]="true"></nz-skeleton-element>
+        </div>
+
+        <div class="loading-book">
+            <nz-skeleton-element nzType="input" class="loading-book__item" [nzActive]="true"></nz-skeleton-element>
+            <nz-skeleton-element nzType="input" class="loading-book__item" [nzActive]="true"></nz-skeleton-element>
+            <nz-skeleton-element nzType="input" class="loading-book__item" [nzActive]="true"></nz-skeleton-element>
+            <nz-skeleton-element nzType="input" class="loading-book__item" [nzActive]="true"></nz-skeleton-element>
+            <nz-skeleton-element nzType="input" class="loading-book__item" [nzActive]="true"></nz-skeleton-element>
+            <nz-skeleton-element nzType="input" class="loading-book__item" [nzActive]="true"></nz-skeleton-element>
+        </div>
+
+        <div class="loading-book">
+            <nz-skeleton-element nzType="input" class="loading-book__item" [nzActive]="true"></nz-skeleton-element>
+            <nz-skeleton-element nzType="input" class="loading-book__item" [nzActive]="true"></nz-skeleton-element>
+            <nz-skeleton-element nzType="input" class="loading-book__item" [nzActive]="true"></nz-skeleton-element>
+            <nz-skeleton-element nzType="input" class="loading-book__item" [nzActive]="true"></nz-skeleton-element>
+            <nz-skeleton-element nzType="input" class="loading-book__item" [nzActive]="true"></nz-skeleton-element>
+            <nz-skeleton-element nzType="input" class="loading-book__item" [nzActive]="true"></nz-skeleton-element>
+        </div>
+
+        <div class="loading-book">
+            <nz-skeleton-element nzType="input" class="loading-book__item" [nzActive]="true"></nz-skeleton-element>
+            <nz-skeleton-element nzType="input" class="loading-book__item" [nzActive]="true"></nz-skeleton-element>
+            <nz-skeleton-element nzType="input" class="loading-book__item" [nzActive]="true"></nz-skeleton-element>
+            <nz-skeleton-element nzType="input" class="loading-book__item" [nzActive]="true"></nz-skeleton-element>
+            <nz-skeleton-element nzType="input" class="loading-book__item" [nzActive]="true"></nz-skeleton-element>
+            <nz-skeleton-element nzType="input" class="loading-book__item" [nzActive]="true"></nz-skeleton-element>
+        </div>
+    </div>
+</div>
