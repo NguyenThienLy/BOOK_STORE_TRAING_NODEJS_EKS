@@ -18,10 +18,10 @@ it('array has 1 on it', () => {
 });
 
 
-// const array = [1, 2, 10, 1000];
-// it('array has 2 on it', () => {
-//   expect(array).toContain(2);
-// });
+const array = [1, 2, 10, 1000];
+it('array has 2 on it', () => {
+  expect(array).toContain(2);
+});
 
 const array = [1, 2, 10, 1000];
 it('array has 2 on it', () => {
