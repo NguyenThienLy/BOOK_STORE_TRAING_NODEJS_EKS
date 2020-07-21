@@ -3,7 +3,7 @@ kind: pipeline
 name: nodejs
 
 steps: 
-  - name: demo-test
+  - name: demo-test-1
     image: node:12.2
     commands: 
         - cd nodejs/src 
