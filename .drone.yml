@@ -6,6 +6,6 @@ steps:
   - name: test
     image: node:12.2
     commands: 
-        - cd nodejs/src 
+        - cd nodejs
         - npm install
         - npm test
