@@ -14,3 +14,7 @@ Add new realm
 Select file `import-keycloak-have-permission.json`
 
 Open browser `http://localhost:8888`
+
+# Drone
+
+Update drone
