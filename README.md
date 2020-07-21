@@ -19,4 +19,4 @@ Open browser `http://localhost:8888`
 
 Update drone
 
-<!-- File update -->
+File update
