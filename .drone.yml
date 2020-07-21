@@ -1,0 +1,11 @@
+---
+kind: pipeline 
+name: nodejs
+
+steps: 
+  - name: test
+    image: node:12.2
+    commands: 
+        - cd nodejs 
+        - npm install
+        - npm test
