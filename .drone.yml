@@ -6,7 +6,4 @@
       - name: demo-test-1-2-3
         image: node:12.2
         commands: 
-            - cd nodejs/src 
-            - npm install
-            - npm install -g nodemon
-            - npm test
+            - echo Hello World!
