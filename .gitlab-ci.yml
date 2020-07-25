@@ -17,6 +17,8 @@ image: node:latest
 #     - node_modules/
 
 test:
+  before_script:
+    - cd nodejs/src
   script:
     - npm install
     - npm test
