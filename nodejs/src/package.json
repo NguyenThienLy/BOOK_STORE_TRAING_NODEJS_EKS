@@ -62,7 +62,7 @@
         "express-session": "^1.17.0",
         "inversify": "^5.0.1",
         "js-yaml": "^3.14.0",
-        "jsonwebtoken": "^8.5.1",
+        "jsonwebtoken": "^9.0.0",
         "keycloak-connect": "^10.0.2",
         "lodash": "^4.17.15",
         "moment": "^2.24.0",
