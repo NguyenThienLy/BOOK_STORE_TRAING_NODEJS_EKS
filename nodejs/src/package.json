@@ -63,7 +63,7 @@
         "inversify": "^5.0.1",
         "js-yaml": "^3.14.0",
         "jsonwebtoken": "^8.5.1",
-        "keycloak-connect": "^10.0.2",
+        "keycloak-connect": "^21.0.1",
         "lodash": "^4.17.15",
         "moment": "^2.24.0",
         "mongodb-memory-server": "^6.5.2",
